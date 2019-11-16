@@ -878,7 +878,7 @@ I apologize if you were falsely duped into thinking the CSI-themed header titles
 
 ### Challenges
 
-Before moving further, myy recommendation would be to split this logic into [separate modules](https://doc.rust-lang.org/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html), instead of putting everything in `main.rs`. You do you though. Here's a few things you could try next:
+Before moving further, my recommendation would be to split this logic into [separate modules](https://doc.rust-lang.org/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html), instead of putting everything in `main.rs`. You do you though. Here's a few things you could try next:
 
 1. Add some sounds.
 1. Make the dots move.
