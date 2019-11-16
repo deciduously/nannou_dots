@@ -1,0 +1,16 @@
+[package]
+name = "nannou_dots"
+version = "0.1.0"
+authors = ["deciduously <ben@deciduously.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+anyhow = "1.0"
+lazy_static = "1.4"
+log = "0.4"
+nannou = "0.12"
+pretty_env_logger = "0.3"
+structopt = "0.3"
