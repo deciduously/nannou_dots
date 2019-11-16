@@ -1,16 +1,14 @@
 # Oxidize Your Life With One Weird Trick
 
-TODO post as "Creative Coding in Rust with Nannou", cover image a still of final app - #rust #beginners #tutorial #creative // Not sure about 4th tag?!@?
-
-We're going to build a samll interactive demo with the [nannou](https://nannou.cc/) creative coding framework for [Rust](https://www.rust-lang.org/). This example itself very simple, but specifically over-engineered to prepare to scale even further for your own project.
+We're going to build a small interactive demo with the [nannou](https://nannou.cc/) creative coding framework for [Rust](https://www.rust-lang.org/). This example itself very simple, but specifically over-engineered to prepare to scale even further for your own project.
 
 This is a beginner-level post but with conditions. You should be able to follow along with the logic here in a general sense with comfort in any imperative language, but if you wanted to build your own app from this base as a total newcomer to Rust, I absolutely recommend you read at least some of [The Rust Programming Language](https://doc.rust-lang.org/book/), freely available, or equivalent before tackling this framework.
 
 Part of the strength of `nannou` as a framework is that is _doesn't_ reinvent the wheel. It is instead intended to pull together and unify the best the excellent Rust ecosystem already has to offer for each subproblem in one unified package, innovating only where the need is not already met by the community. You could also get here yourself by adding these dependencies one-by-one and gluing everything together, but this is aiming to be a curated batteries-included distribution for creative coding in pure top-to-bottom Rust.
 
-## Table Of Contents
+The final code can be found on [GitHub](https://github.com/deciduously/nannou_dots).
 
-TODO generate with [generator](https://ecotrust-canada.github.io/markdown-toc/)
+## Table Of Contents
 
 - [The Motive](#the-motive)
   - [Yes, Really, In Rust](#yes--really--in-rust)
@@ -619,7 +617,7 @@ I still leverage the default constructor, but instead give myself a method to se
 
 ##### Logging
 
-Another way to set ourselves up for success is by hooking up the standard Rust logging tooling. Now, I'm going to toss three crates at you but don't panic, it's all just one thing. I'm using [`pretty_env_logger`], which dresses up the output from [`env_logger`] with nice colors and formatting. This itself is a wrapper around [`log`](), which provides a bunch of `println!()`-esque macros like `warn!()`, `debug!()`, and `info!()`. The `env_logger` crate (and thus `pretty_env_logger`)
+Another way to set ourselves up for success is by hooking up the standard Rust logging tooling. Now, I'm going to toss three crates at you but don't panic, it's all just one thing. I'm using [`pretty_env_logger`], which dresses up the output from [`env_logger`] with nice colors and formatting. This itself is a wrapper around [`log`](https://docs.rs/log/0.4.8/log/), which provides a bunch of `println!()`-esque macros like `warn!()`, `debug!()`, and `info!()`. The `env_logger` crate (and thus `pretty_env_logger`)
 
 First, add some new dependencies to `Cargo.toml`:
 
@@ -630,8 +628,6 @@ First, add some new dependencies to `Cargo.toml`:
   nannou = "0.12"
 + pretty_env_logger = "0.3"
 ```
-
-The [`pretty_env_logger`](https://github.com/seanmonstar/pretty-env-logger) crate provides some nicer output for the main even - the [`log`](https://docs.rs/log/0.4.8/log/) crate. This exposes some macros that we can use like `warn!()`, `info!()`, and `debug!()` in lieu of `println!()`, and then define how verbose we want our application to be at runtime.
 
 To start it up, here's a function I just kinda copy-paste into new projects:
 
@@ -843,7 +839,7 @@ Before we initialize them, let's flesh out the `Dot` definition to allow us to s
 
 Now we can make a `Model::init_dots()` associated function that the default constructor can use:
 
-```
+```rust
 impl Model {
     fn init_dots() -> Vec<Dot> {
         let mut ret = Vec::new();

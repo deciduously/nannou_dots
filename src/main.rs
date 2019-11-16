@@ -23,7 +23,7 @@ fn main() {
 
 /// A nannou demonstration application
 #[derive(StructOpt, Debug)]
-#[structopt(name = "tiny_dancer")]
+#[structopt(name = "nannou_dots")]
 pub struct Opt {
     /// How many dots to render
     #[structopt(short, long, default_value = "1")]
