@@ -1,3 +1,3 @@
-# tiny_dancer
+# nannou_dots
 
 A [`nannou`](https://nannou.cc/) demo application.
